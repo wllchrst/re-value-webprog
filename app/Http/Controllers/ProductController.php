@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class UserController
+class ProductController
 {
     /**
      * Display a listing of the resource.
@@ -21,14 +21,6 @@ class UserController
     public function create()
     {
         //
-        $user = new User;
-        $user->name = "tester";
-        $user->email = "email@gmail.com";
-        $user->description = "desc";
-        $user->image_path = "asdfasdf";
-        $user->password = "asdfasdf";
-        $result = $user->save();
-        return $result;
     }
 
     /**
@@ -42,7 +34,7 @@ class UserController
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Product $product)
     {
         //
     }
@@ -50,7 +42,7 @@ class UserController
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Product $product)
     {
         //
     }
@@ -58,7 +50,7 @@ class UserController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -66,7 +58,7 @@ class UserController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Product $product)
     {
         //
     }

@@ -18,6 +18,14 @@ class AuthController extends Controller
         return view('pages.login'); // Return the login view
     }
 
+    public function showRegisterForm(){
+        return view("pages.register");
+    }
+
+    public function registerUser(Request $request){
+        dd($request->all());
+    }
+
     /**
      * Handle a login request to the application.
      *
@@ -27,19 +35,16 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         dd($request->all());
-        // Validate the request data
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        // Attempt to log the user in
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            // Redirect to intended location after successful login
-            return redirect()->intended('/home'); // Change to your intended route
+            return redirect()->intended('/home'); 
         }
 
-        // If login fails, throw a validation exception
         throw ValidationException::withMessages([
             'email' => ['The provided credentials are incorrect.'],
         ]);

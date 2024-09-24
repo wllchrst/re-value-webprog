@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\ProductTransaction;
 use Illuminate\Http\Request;
 
-class UserController
+class ProductTransactionController
 {
     /**
      * Display a listing of the resource.
@@ -20,6 +20,7 @@ class UserController
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -33,19 +34,15 @@ class UserController
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(ProductTransaction $productTransaction)
     {
         //
-    }
-
-    public function login(Request $request){
-        return "here";
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(ProductTransaction $productTransaction)
     {
         //
     }
@@ -53,7 +50,7 @@ class UserController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, ProductTransaction $productTransaction)
     {
         //
     }
@@ -61,7 +58,7 @@ class UserController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(ProductTransaction $productTransaction)
     {
         //
     }

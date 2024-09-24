@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class ProductTransaction extends Model
 {
     use HasFactory;
 
     public function transactions(){
-        return $this->hasMany(Transaction::class);
+        $this->belongsTo(Transaction::class);
     }
 
-    public function cart(){
-        return $this->hasOne(Cart::class);
+    public function product(){
+        return $this->belongsTo(Product::class);
     }
 }

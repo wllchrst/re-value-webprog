@@ -61,15 +61,13 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        dd($request->all());
-
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            return redirect()->intended('/home'); 
+            return redirect()->route('home'); 
         }
 
         throw ValidationException::withMessages([

@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
 Route::get("", [AuthController::class, "showLoginForm"]);
+Route::get("/home", [HomeController::class, "getHomePage"])->name("home");
 
 Route::prefix("user")->group(function() {
     // get pages

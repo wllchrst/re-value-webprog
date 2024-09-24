@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -22,8 +24,33 @@ class AuthController extends Controller
         return view("pages.register");
     }
 
-    public function registerUser(Request $request){
-        dd($request->all());
+    public function register(Request $request){
+        // Validate the form data
+        $request->validate([
+            'email' => 'required|email|unique:users,email',
+            'name' => 'required|min:5',
+            'password' => 'required|min:6',
+            'description' => 'required|string',
+            'image_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Handle file upload
+        if ($request->hasFile('image_path')) {
+            $imageName = time() . '.' . $request->image_path->extension();
+            $request->image_path->move(public_path('images'), $imageName);
+        }
+
+        // Create a new user
+        User::create([
+            'email' => $request->email,
+            'name' => $request->name,
+            'password' => Hash::make($request->password),
+            'description' => $request->description,
+            'image_path' => $imageName, // Save the image path in the database
+        ]);
+
+        // Redirect or return response
+        return redirect()->route('home')->with('success', 'Registration successful!');
     }
 
     /**

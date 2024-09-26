@@ -20,11 +20,13 @@ class AuthController extends Controller
         return view('pages.login'); // Return the login view
     }
 
-    public function showRegisterForm(){
+    public function showRegisterForm()
+    {
         return view("pages.register");
     }
 
-    public function register(Request $request){
+    public function register(Request $request)
+    {
         // Validate the form data
         $request->validate([
             'email' => 'required|email|unique:users,email',
@@ -40,13 +42,15 @@ class AuthController extends Controller
             $request->image_path->move(public_path('images'), $imageName);
         }
 
+        $imagePathPrefix = "images/";
+
         // Create a new user
         User::create([
             'email' => $request->email,
             'name' => $request->name,
-            'password' => Hash::make($request->password),
+            'password' => ($request->password),
             'description' => $request->description,
-            'image_path' => $imageName, // Save the image path in the database
+            'image_path' => $imagePathPrefix + $imageName, // Save the image path in the database
         ]);
 
         // Redirect or return response
@@ -67,7 +71,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            return redirect()->route('home'); 
+            return redirect()->route('home');
         }
 
         throw ValidationException::withMessages([

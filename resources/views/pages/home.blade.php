@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main-page-layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+@section('title', 'Home')
 
-<body>
-    this is home page
-</body>
+@section('page-title', 'Home Page')
 
-</html>
+@section('content')
+    <p>This is the home page content.</p>
+@endsection

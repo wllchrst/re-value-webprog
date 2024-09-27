@@ -48,9 +48,9 @@ class AuthController extends Controller
         User::create([
             'email' => $request->email,
             'name' => $request->name,
-            'password' => ($request->password),
+            'password' => bcrypt($request->password),
             'description' => $request->description,
-            'image_path' => $imagePathPrefix + $imageName, // Save the image path in the database
+            'image_path' => $imagePathPrefix . $imageName, // Save the image path in the database
         ]);
 
         // Redirect or return response

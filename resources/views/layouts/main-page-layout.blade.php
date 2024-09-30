@@ -7,25 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Main Page')</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/main-layout.css') }}">
 
     @yield('styles')
-    <!-- Custom CSS -->
     <style></style>
 </head>
 
 <body>
-
-    <!-- Sidebar -->
     <nav class="sidebar">
-        <!-- Navigation Links -->
         <ul class="list-unstyled nav-links">
-            <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="{{ route('home') }}"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a></li>
             <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
             <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
         </ul>
@@ -37,7 +31,6 @@
             <div class="profile-info">
                 <strong>{{ auth()->user()->email }}</strong>
             </div>
-            <!-- Logout Icon -->
             <a href="{{ route('user.logout') }}" class="logout-btn"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i>

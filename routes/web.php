@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 
 Route::get("", [AuthController::class, "showLoginForm"]);
@@ -17,4 +19,12 @@ Route::prefix("user")->group(function () {
     Route::post("/register", [AuthController::class, "register"])->name("user.register");
     Route::post("/logout", [AuthController::class, "logout"])->name("user.logout");
     Route::post("/update", [ProfileController::class, "updateUser"])->name("user.update");
+});
+
+Route::prefix("product")->group(function () {
+    Route::post('/store', [ProductController::class, "store"])->name("product.store");
+});
+
+Route::prefix("item")->group(function () {
+    Route::post('/store', [ItemController::class, "store"])->name("item.store");
 });

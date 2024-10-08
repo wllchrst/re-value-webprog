@@ -56,4 +56,12 @@
 
         </div>
     </div>
+
+    <div>
+        @include('components.products.create-modal')
+    </div>
+
+    <div>
+        @include('components.items.create-modal')
+    </div>
 @endsection

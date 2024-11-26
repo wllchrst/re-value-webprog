@@ -9,59 +9,52 @@
 @endsection
 
 @section('content')
-    <div class="container mx-auto py-12">
-        <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
-
+    <div class="container mt-5">
+        <!-- Profile Card -->
+        <div class="card shadow-lg mx-auto" style="max-width: 800px; overflow: hidden; border-radius: 15px;">
             <!-- Cover Photo -->
-            <div class="relative h-64 bg-gradient-to-r from-blue-400 to-indigo-600">
+            <div class="position-relative" style="height: 200px; background: linear-gradient(to right, #4e73df, #1cc88a);">
                 @if ($user->image_path)
                     <img src="{{ asset($user->image_path) }}" alt="Profile Image"
-                        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-12 w-32 h-32 rounded-full border-4 border-white shadow-lg">
+                        class="rounded-circle border border-white shadow position-absolute top-100 start-50 translate-middle"
+                        style="width: 120px; height: 120px;">
                 @else
-                    <img src="{{ asset('default-profile.png') }}" alt="Default Profile"
-                        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-12 w-32 h-32 rounded-full border-4 border-white shadow-lg">
+                    <img src="{{ asset('default-profile.png') }}" alt="Default Profile Image"
+                        class="rounded-circle border border-white shadow position-absolute top-100 start-50 translate-middle"
+                        style="width: 120px; height: 120px;">
                 @endif
             </div>
 
-            <!-- User Info -->
-            <div class="text-center mt-16">
-                <h1 class="text-4xl font-bold text-gray-900">{{ $user->name }}</h1>
-                <p class="text-gray-600">{{ $user->email }}</p>
-                <div class="mt-4">
-                    <span class="text-gray-500">Points: </span>
-                    <span class="text-xl font-semibold text-indigo-600">{{ $user->point }}</span>
-                </div>
+            <!-- Profile Info -->
+            <div class="card-body text-center mt-5">
+                <h4 class="card-title">{{ $user->name }}</h4>
+                <p class="text-muted">{{ $user->email }}</p>
+                <p class="text-muted">
+                    <strong>Points: </strong><span class="text-primary">{{ $user->point }}</span>
+                </p>
+                <a href="{{ route('user.update', $user->id) }}" class="btn btn-primary btn-sm">Edit Profile</a>
             </div>
 
-            <!-- Description -->
-            <div class="px-6 py-8">
-                <h2 class="text-2xl font-semibold text-gray-800">About Me</h2>
-                <p class="mt-4 text-gray-700 leading-relaxed">{{ $user->description ?? 'No description provided.' }}</p>
+            <!-- About Section -->
+            <div class="card-body border-top">
+                <h5 class="card-title">About Me</h5>
+                <p class="card-text">{{ $user->description ?? 'No description provided.' }}</p>
             </div>
 
-            <!-- Edit Button -->
-            <div class="flex justify-center pb-8">
-                <a href="{{ route('user.update', $user->id) }}"
-                    class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg">
-                    Edit Profile
-                </a>
+            <!-- Additional Info Section -->
+            <div class="card-footer text-center bg-light">
+                <h6>Projects & Activities</h6>
+                <p class="text-muted mb-0">Showcase your projects or activities here.</p>
             </div>
-
-            <!-- Additional Info Section (Optional) -->
-            <div class="border-t px-6 py-8 bg-gray-50">
-                <h2 class="text-lg font-semibold text-gray-700">Projects & Activities</h2>
-                <p class="text-gray-600 mt-2">Here you can showcase user-specific projects, activities, or other related
-                    info.</p>
-            </div>
-
         </div>
-    </div>
 
-    <div>
-        @include('components.products.create-modal')
-    </div>
-
-    <div>
-        @include('components.items.create-modal')
+        <div class="d-flex justify-content-center m-3">
+            <div class="mx-3">
+                @include('components.products.create-modal')
+            </div>
+            <div class="mx-3">
+                @include('components.items.create-modal')
+            </div>
+        </div>
     </div>
 @endsection

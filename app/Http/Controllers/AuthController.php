@@ -45,13 +45,15 @@ class AuthController extends Controller
         $imagePathPrefix = "images/";
 
         // Create a new user
-        User::create([
+        $user = User::create([
             'email' => $request->email,
             'name' => $request->name,
             'password' => bcrypt($request->password),
             'description' => $request->description,
             'image_path' => $imagePathPrefix . $imageName, // Save the image path in the database
         ]);
+
+        Auth::login($user);
 
         // Redirect or return response
         return redirect()->route('home')->with('success', 'Registration successful!');

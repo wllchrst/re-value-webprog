@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+    protected $table = "users";
     protected $fillable = ['email', 'password', 'description', 'image_path', 'name'];
 
     public function transactions()

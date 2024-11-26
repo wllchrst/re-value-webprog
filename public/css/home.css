@@ -1,4 +1,31 @@
+/* Menggunakan Flexbox untuk membuat halaman dengan footer yang menempel di bawah */
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-.products-container{
-    overflow-y: auto;
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Gaya untuk footer */
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk footer */
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #fff;
 }

@@ -53,7 +53,7 @@
                 @include('components.products.create-modal')
             </div>
             <div class="mx-3">
-                @include('components.items.create-modal')
+                @include('components.items.create-modal', ['item_types' => $item_types])
             </div>
         </div>
     </div>

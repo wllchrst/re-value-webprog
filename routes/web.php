@@ -22,9 +22,11 @@ Route::prefix("user")->group(function () {
 });
 
 Route::prefix("product")->group(function () {
+    Route::get("", [ProductController::class, "getPage"])->name("product.getPage");
     Route::post('/store', [ProductController::class, "store"])->name("product.store");
 });
 
 Route::prefix("item")->group(function () {
+    Route::get("", [ItemController::class, "getPage"])->name("item.getPage");
     Route::post('/store', [ItemController::class, "store"])->name("item.store");
 });

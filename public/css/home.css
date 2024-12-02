@@ -1,5 +1,6 @@
 /* Menggunakan Flexbox untuk membuat halaman dengan footer yang menempel di bawah */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -28,4 +29,22 @@ footer p {
     margin: 0;
     font-size: 0.9rem;
     color: #fff;
+}
+
+.pagination {
+    margin-top: 2rem;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0 5rem 0;
+}
+
+.welcome-container p {
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 600px;
 }

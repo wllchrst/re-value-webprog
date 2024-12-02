@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function getHomePage()
     {
-        $products = Product::all();
+        $products = Product::orderBy("created_at", "desc")->paginate(6);
         return view("pages.home", compact("products"));
     }
 }

@@ -9,6 +9,15 @@
 @endsection
 
 @section('content')
+    <div class="welcome-container">
+        <h1>
+            Welcome To Re Value
+        </h1>
+        <p>
+            Empowering a sustainable future by transforming waste into valuable opportunities. Join us in revolutionizing
+            e-commerce by giving recycled items a new purpose and creating a greener tomorrow, one sale at a time
+        </p>
+    </div>
     <div class="container mt-4">
         <div class="row row-cols-1 row-cols-md-3 g-4 products-container">
             @foreach ($products as $product)
@@ -28,6 +37,9 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="pagination justify-content-center">
+            {{ $products->links() }}
         </div>
     </div>
 @endsection

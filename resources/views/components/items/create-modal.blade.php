@@ -39,33 +39,33 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="weight" class="form-label">Item Weight (Gram)</label>
+                            <input type="number" name="weight" id="weight" class="form-control"
+                                value="{{ old('weight') }}" required>
+                            @error('weight')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Item Type</label>
+                            <select class="form-control" name="item_type_id" id="item_type">
+                                @foreach ($item_types as $item_type)
+                                    <option value={{ $item_type->id }}>{{ $item_type->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('item_type_id')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <input type="file" name="image" id="image" class="form-control">
                             @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        <div class="mb-3">
-                            <label for="sold" class="form-label">Sold</label>
-                            <select name="sold" id="sold" class="form-control">
-                                <option value="0" {{ old('sold') == 0 ? 'selected' : '' }}>No</option>
-                                <option value="1" {{ old('sold') == 1 ? 'selected' : '' }}>Yes</option>
-                            </select>
-                            @error('sold')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="user_id" class="form-label">User ID</label>
-                            <input type="text" name="user_id" id="user_id" class="form-control"
-                                value="{{ old('user_id') }}" required>
-                            @error('user_id')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
                         <button type="submit" class="btn btn-primary">Create Item</button>
                     </form>
                 </div>

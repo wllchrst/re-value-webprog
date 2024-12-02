@@ -65,16 +65,6 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        <div class="">
-                            <label for="user_id" class="form-label">User ID</label>
-                            <input type="text" name="user_id" id="user_id" class="form-control"
-                                value="{{ old('user_id') }}" required>
-                            @error('user_id')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
                         <button type="submit" class="btn btn-primary">Create Product</button>
                     </form>
                 </div>

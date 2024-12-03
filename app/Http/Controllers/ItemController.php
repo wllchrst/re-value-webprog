@@ -17,7 +17,8 @@ class ItemController extends Controller
     }
 
     public function getPage(){
-        return view("pages.item");
+        $items = Item::orderBy("created_at", "desc")->paginate();
+        return view("pages.item", compact("items"));
     }
 
     /**

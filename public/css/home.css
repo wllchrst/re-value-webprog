@@ -35,6 +35,8 @@ footer p {
     margin-top: 2rem;
 }
 
+/* styling & animation */
+
 .welcome-container {
     display: flex;
     flex-direction: column;

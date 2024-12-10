@@ -25,6 +25,7 @@ class ProductController
     }
 
     public function getPage(){
+        // change paginate
         $products = Product::orderBy("created_at", "desc")->paginate(20);
         return view("pages.product", compact("products"));
     }

@@ -7,11 +7,12 @@
     <title>@yield('title')</title>
     @yield('styles')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 
 <body>
     <!-- Navbar (Top Navigation) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4A7562">
         <div class="container">
             <a class="navbar-brand" href="#">Re-Value</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -53,7 +54,7 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="bg-dark text-white text-center py-4 mt-5">
+    <footer class="text-white text-center py-4 mt-5" style="background-color: #4A7562">
         <p>&copy; Re-Value. All rights reserved.</p>
     </footer>
 

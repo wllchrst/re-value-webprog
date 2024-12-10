@@ -10,9 +10,9 @@
 
 @section('content')
 <div class="container mt-4">
-    <div class="row row-cols-1 row-cols-md-3 g-4 products-container">
+    <div class="row row-cols-1 row-cols-md-5 g-4 products-container">
         @foreach ($products as $product)
-            <div class="col">
+            <div class="col animate__animated animate__fadeInUp animate__duration-15s">
                 <div class="card h-100">
                     <img src="{{ $product->image_path ?? 'default-image.jpg' }}" class="card-img-top"
                         alt="{{ $product->name }}">

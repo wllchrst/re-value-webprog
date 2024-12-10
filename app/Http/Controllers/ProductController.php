@@ -25,7 +25,8 @@ class ProductController
     }
 
     public function getPage(){
-        return view("pages.product");
+        $products = Product::orderBy("created_at", "desc")->paginate(6);
+        return view("pages.product", compact("products"));
     }
 
     /**

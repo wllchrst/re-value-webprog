@@ -18,6 +18,28 @@
             e-commerce by giving recycled items a new purpose and creating a greener tomorrow, one sale at a time
         </p>
     </div>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Re-Value can do it all</h2>
+        <div class="row text-center">
+            <!-- Baris Pertama -->
+            <div class="col-md-6 mb-4">
+                <img src="/images/Recycle_icon.png" alt="Recycled Products" class="img-fluid mb-3" style="width: 100px;">
+                <h5>Recycled Products</h5>
+                <p>Buy eco-friendly items made from recycled materials</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="/images/SaleTag_icon.png" alt="Sell Used Items" class="img-fluid mb-3" style="width: 100px;">
+                <h5>Sell Used Items</h5>
+                <p>Sell used bottles, cardboard, cans, and earn points</p>
+            </div>
+            <!-- Baris Kedua -->
+            <div class="col-md-12 mb-4">
+                <img src="/images/Coin_icon.png" alt="Earn Points for Recycling" class="img-fluid mb-3" style="width: 100px;">
+                <h5>Earn Points for Recycling</h5>
+                <p>Get points for submitting used items. Redeem for rewards!</p>
+            </div>
+        </div>
+    </div>
     <div class="container mt-4">
         <div class="row row-cols-1 row-cols-md-3 g-4 products-container">
             @foreach ($products as $product)
@@ -42,4 +64,6 @@
             {{ $products->links() }}
         </div>
     </div>
+    
+    
 @endsection

@@ -65,30 +65,31 @@
         </div>
     </div>
     <div class="container mt-4 animate__animated animate__fadeInUp animate__delay-1s animate__duration-2s">
-        <div class="row row-cols-1 row-cols-md-4 g-4 products-container">
-            @foreach ($products as $product)
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="{{ $product->image_path ?? 'default-image.jpg' }}" class="card-img-top max-h-10"
-                            alt="{{ $product->name }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text">Category: {{ $product->category }}</p>
-                            <p class="card-text">Price: ${{ $product->price }}</p>
-                            <p class="card-text">Stock: {{ $product->stock }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="{{ route("product.detail", $product->id) }}" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
-                            onmouseout="this.style.backgroundColor='#4A7562';"> Buy Now </a>
+        <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s" style="color: #2C6B49">Our Products</h2>
+            <div class="row row-cols-1 row-cols-md-4 g-4 products-container">
+                @foreach ($products as $product)
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{ $product->image_path ?? 'default-image.jpg' }}" class="card-img-top max-h-10"
+                                alt="{{ $product->name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $product->name }}</h5>
+                                <p class="card-text">Category: {{ $product->category }}</p>
+                                <p class="card-text">Price: ${{ $product->price }}</p>
+                                <p class="card-text">Stock: {{ $product->stock }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ route("product.detail", $product->id) }}" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
+                                onmouseout="this.style.backgroundColor='#4A7562';"> Buy Now </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
+            <div class="pagination justify-content-center">
+                {{ $products->links() }}
+            </div>
         </div>
-        <div class="pagination justify-content-center">
-            {{ $products->links() }}
-        </div>
-    </div>
 
 
 @endsection

@@ -68,7 +68,7 @@
                             <p class="card-text">Stock: {{ $product->stock }}</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary w-100">Buy Now</a>
+                            <a href="{{ route("product.detail", $product->id) }}" class="btn btn-primary w-100"> Buy Now </a>
                         </div>
                     </div>
                 </div>

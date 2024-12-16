@@ -120,5 +120,32 @@ footer p {
     border-radius: 8px;
 }
 
+/* Gaya untuk pagination aktif */
+.pagination .page-item.active .page-link {
+    background-color: #4A7562; /* Warna hijau untuk background */
+    border-color: #4A7562;     /* Warna hijau untuk border */
+    color: white;              /* Warna teks putih */
+}
+
+/* Gaya untuk pagination hover */
+.pagination .page-item:hover .page-link {
+    background-color: #3f5d48; /* Warna hijau lebih gelap saat hover */
+    border-color: #3f5d48;     /* Warna border lebih gelap saat hover */
+}
+
+/* Gaya untuk semua pagination link */
+.pagination .page-link {
+    color: #4A7562; /* Warna hijau untuk teks */
+    border: 1px solid #4A7562; /* Border hijau */
+}
+
+/* Gaya untuk pagination item yang tidak aktif */
+.pagination .page-item.disabled .page-link {
+    background-color: #f1f1f1;
+    color: #ccc;
+    border-color: #ccc;
+}
+
+
 
 

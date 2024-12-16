@@ -66,7 +66,8 @@ onmouseout="this.style.backgroundColor='#4A7562';" data-bs-toggle="modal" data-b
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Create Product</button>
+                        <button type="submit" class="btn"style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 
+                        onmouseout="this.style.backgroundColor='#4A7562';">Create Product</button>
                     </form>
                 </div>
             </div>

@@ -13,7 +13,7 @@
         <!-- Profile Card -->
         <div class="card shadow-lg mx-auto" style="max-width: 800px; overflow: hidden; border-radius: 15px;">
             <!-- Cover Photo -->
-            <div class="position-relative" style="height: 200px; background: linear-gradient(to right, #4e73df, #1cc88a);">
+            <div class="position-relative" style="height: 150px; background: linear-gradient(to right,#4A7562,rgb(178, 219, 203));">
                 @if ($user->image_path)
                     <img src="{{ asset($user->image_path) }}" alt="Profile Image"
                         class="rounded-circle border border-white shadow position-absolute top-100 start-50 translate-middle"
@@ -49,11 +49,11 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center m-3">
-            <div class="mx-3">
+        <div class="d-flex justify-content-center m-4 mb-5">
+            <div class="mx-4">
                 @include('components.products.create-modal')
             </div>
-            <div class="mx-3">
+            <div class="mx-4">
                 @include('components.items.create-modal', ['item_types' => $item_types])
             </div>
         </div>

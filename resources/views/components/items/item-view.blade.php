@@ -1,5 +1,6 @@
 <div class="row row-cols-1 row-cols-md-5 g-4 products-container">
     @foreach ($items as $item)
+    <div class="col animate__animated animate__fadeInUp animate__duration-15s">
         <div class="col">
             <div class="card h-100">
                 <!-- Container for the image with fixed height and width -->
@@ -18,5 +19,6 @@
                 </div>
             </div>
         </div>
+    </div>
     @endforeach
 </div>

@@ -9,7 +9,7 @@
                     <p class="card-text">Price: ${{ $item->weight }}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary w-100">Buy Now</a>
+                    <a href="{{ route('item.detail', $item->id) }}" class="btn btn-primary w-100">Buy Now</a>
                 </div>
             </div>
         </div>

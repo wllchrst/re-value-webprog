@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\ItemTransaction;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -17,7 +19,7 @@ class ItemController extends Controller
     }
 
     public function getPage(){
-        $items = Item::orderBy("created_at", "desc")->paginate();
+        $items = Item::orderBy("created_at", "desc")->where("sold", false)->paginate();
         return view("pages.item", compact("items"));
     }
 
@@ -30,8 +32,57 @@ class ItemController extends Controller
     }
 
     private function getItemPoint(Item $item): int {
+        // $itemTypes = [
+        //     ['name' => 'Plastic', 'description' => 'Items with plastic material'],
+        //     ['name' => 'Metal', 'description' => 'Items with metal material'],
+        //     ['name' => 'Glass', 'description' => 'Items made from glass'],
+        //     ['name' => 'Paper', 'description' => 'Paper-based items'],
+        //     ['name' => 'Fabric', 'description' => 'Fabric materials for recycling'],
+        // ];
 
-        return 1;
+        $multiplier = 0;
+
+        $item_type = $item->item_type->name;
+
+        if($item_type == 'Plastic') $multiplier = 1;
+        else if($item_type == 'Metal') $multiplier = 3;
+        else if($item_type == 'Glass') $multiplier = 2;
+        else if($item_type == 'Paper') $multiplier = 1;
+        else if($item_type == 'Fabric') $multiplier = 2;
+
+        return $multiplier * $item->weight;
+    }
+
+    public function getDetail($id){
+        $item = Item::findOrFail($id);
+
+        return view('pages.item-detail', compact("item"));
+    }
+
+    public function buy($id){
+        $item = Item::findOrFail($id);
+
+        if($item->sold) {
+            return redirect()->route("item.getPage");
+        }
+
+        DB::transaction(function() use($item) {
+            $user = auth()->user();
+
+            $point = $this->getItemPoint($item);
+            $user->point = $user->point + $point;
+            $user->save();
+
+            ItemTransaction::create([
+                "user_id" => $user->id,
+                "item_id" => $item->id
+            ]);
+
+            $item->sold = true;
+            $item->save();
+        });
+
+        return redirect()->route("item.getPage");
     }
 
     /**

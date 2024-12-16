@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endsection
 
-// add animation
 @section('content')
     <div class="welcome-container">
         <div class="row">
@@ -32,7 +31,6 @@
             </div>
         </div>
     </div>
-    // add jargon
     <div class="jargon animate__animated animate__fadeInUp">
         <p>Together, we’re crafting a cleaner, brighter future—one transaction at a time. 🌍✨</p>
     </div>
@@ -40,11 +38,6 @@
         <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s" style="color: #2C6B49">Re-Value can do it all</h2>
         <div class="row text-center">
             <div class="col-md-6 mb-4 animate__animated animate__fadeInLeft animate__delay-1s animate__duration-2s">
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Re-Value can do it all</h2>
-        <div class="row text-center">
-            <!-- Baris Pertama -->
-            <div class="col-md-6 mb-4">
                 <img src="/images/Recycle_icon.png" alt="Recycled Products" class="img-fluid mb-3" style="width: 100px;">
                 <h5>Recycled Products</h5>
                 <p>Buy eco-friendly items made from recycled materials</p>

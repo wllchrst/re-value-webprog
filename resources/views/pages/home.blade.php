@@ -45,7 +45,9 @@
         <p>Together, we’re crafting a cleaner, brighter future—one transaction at a time. 🌍✨</p>
     </div>
     <div class="container-mainpoint mt-5">
-        <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s" style="color: #2C6B49">Re-Value can do it all</h2>
+        <div>
+            <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s" style="color: #2C6B49">Re-Value can do it all</h2>
+        </div>
         <div class="row text-center">
             <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft animate__delay-1s animate__duration-2s">
                 <img src="/website-content/Recycle_icon.png" alt="Recycled Products" class="img-fluid mb-3" style="width: 100px;">

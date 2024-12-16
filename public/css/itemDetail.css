@@ -1,0 +1,32 @@
+.image-container {
+    display: flex;
+    align-items: center; /* Pusatkan gambar secara vertikal */
+    justify-content: center; /* Pusatkan gambar horizontal */
+    overflow: hidden; /* Hilangkan overflow jika ada */
+}
+
+.item-image {
+    width: 100%;
+    height: auto; /* Ikuti proporsi gambar */
+    max-height: 426px; /* Batasi tinggi gambar */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card {
+    height: auto; /* Card menyesuaikan konten */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-body {
+    padding: 20px; /* Tambahkan padding untuk konten */
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.row.g-0 {
+    margin: 0; /* Hilangkan margin default */
+}

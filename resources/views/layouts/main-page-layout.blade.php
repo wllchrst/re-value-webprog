@@ -34,14 +34,16 @@
                             href="{{ route('item.getPage') }}">Item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'profile' ? 'active' : '' }}"
-                            href="{{ route('profile') }}">Profile</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() == 'profile' ? 'active' : '' }}"
+                            href="{{ route('profile') }}">
+                            <img src="/website-content/profile_icon.png" style="width: 30px; height: 30px;">
+                        </a>
                     </li>
                 </ul>
             </div>

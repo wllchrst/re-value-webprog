@@ -130,6 +130,7 @@ footer p {
 /* Gaya untuk pagination hover */
 .pagination .page-item:hover .page-link {
     background-color: #3f5d48; /* Warna hijau lebih gelap saat hover */
+    color: #ccc;
     border-color: #3f5d48;     /* Warna border lebih gelap saat hover */
 }
 

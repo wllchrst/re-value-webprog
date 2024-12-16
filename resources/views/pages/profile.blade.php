@@ -30,7 +30,7 @@
                 <h4 class="card-title">{{ $user->name }}</h4>
                 <p class="text-muted">{{ $user->email }}</p>
                 <p class="text-muted">
-                    <strong>Points: </strong><span class="text-primary">{{ $user->point }}</span>
+                    <strong>Points: </strong><span style="color: #4A7562; font-weight: bold;">{{ $user->point }}</span>
                 </p>
                 <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 
                 onmouseout="this.style.backgroundColor='#4A7562';">Edit Profile</a>

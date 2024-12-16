@@ -27,8 +27,11 @@
                         <p class="card-text"><strong>Created At:</strong> {{ $item->created_at->format('Y-m-d H:i:s') }}</p>
                         <p class="card-text"><strong>Updated At:</strong> {{ $item->updated_at->format('Y-m-d H:i:s') }}</p>
                         <p class="card-text"><strong>Uploaded by User ID:</strong> {{ $item->user->name }}</p>
-                        <a href="{{ route('item.buy', $item->id) }}" class="btn btn-success mt-3">Buy</a>
-                        <a href="{{ url()->previous() }}" class="btn btn-primary mt-3">Back</a>
+                        <a href="{{ route('item.buy', $item->id) }}" class="btn mt-3" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 
+                        onmouseout="this.style.backgroundColor='#4A7562';">Buy</a>
+                        <a href="{{ url()->previous() }}" class="btn btn-outline mt-3" style="border: 1.85px solid #4A7562; color: #4A7562; background-color: transparent;" 
+   onmouseover="this.style.backgroundColor='#4A7562'; this.style.color='white';" 
+   onmouseout="this.style.backgroundColor='transparent'; this.style.color='green';">Back</a>
                     </div>
                 </div>
             </div>

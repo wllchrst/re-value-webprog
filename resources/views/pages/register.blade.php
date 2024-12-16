@@ -33,12 +33,13 @@
                 <input type="file" class="form-control-file" id="image_path" name="image_path" required>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block mb-3">Register</button>
+            <button type="submit" class="btn btn-block mb-3"style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 
+            onmouseout="this.style.backgroundColor='#4A7562';">Register</button>
         </form>
     </div>
 
     <div class="text-center mt-3">
-        <p>Already have an account? <a href="/">Login</a></p>
+        <p>Already have an account? <a href="/" style="color: #4A7562; font-weight: bold">Login</a></p>
     </div>
 </div>
 @endsection

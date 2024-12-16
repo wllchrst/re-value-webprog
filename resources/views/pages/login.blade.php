@@ -22,15 +22,16 @@
                 <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
                 <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
-            <button type="submit" class="btn btn-primary btn-block mb-3">Login</button>
+            <button type="submit" class="btn btn-block mb-3" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 
+            onmouseout="this.style.backgroundColor='#4A7562';">Login</button>
 
             <div class="d-flex justify-content-end">
-                <a href="{{ route('user.register') }}" class="text-decoration-none text-primary" style="font-size: 0.8rem;">Forgot password?</a>
+                <a href="{{ route('user.register') }}" class="text-decoration-none" style="font-size: 0.8rem; color: #4A7562">Forgot password?</a>
             </div>
         </form>
     </div>
     <div class="text-center mt-3">
-        <p>Don't have an account? <a href="{{ route('user.register') }}">Register</a></p>
+        <p>Don't have an account? <a href="{{ route('user.register') }}" style="color: #4A7562; font-weight: bold">Register</a></p>
     </div>
 </div>
 @endsection

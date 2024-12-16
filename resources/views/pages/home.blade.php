@@ -29,10 +29,12 @@
                     </p>
                     <div class="d-flex">
                         <div>
-                            @include('components.products.create-modal')
+                            <a href="{{ route('product.getPage') }}" class="btn w-40" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
+                            onmouseout="this.style.backgroundColor='#4A7562';"> See Product </a>
                         </div>
                         <div class="mx-3">
-                            @include('components.items.create-modal', ['item_types' => $item_types])
+                            <a href="{{ route('item.getPage') }}" class="btn w-40" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
+                            onmouseout="this.style.backgroundColor='#4A7562';"> See Item </a>
                         </div>
                     </div>
                 </div>

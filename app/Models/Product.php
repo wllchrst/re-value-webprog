@@ -14,7 +14,7 @@ class Product extends Model
 
     public function transactions(): HasMany
     {
-        return $this->hasMany(ProductTransaction::class);
+        return $this->hasMany(Transaction::class);
     }
 
     public function user()

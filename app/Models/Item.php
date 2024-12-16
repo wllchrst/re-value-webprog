@@ -14,4 +14,12 @@ class Item extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function item_transactions(){
+        return $this->hasMany(ItemTransaction::class);
+    }
+
+    public function item_type(){
+        return $this->belongsTo(ItemType::class);
+    }
 }

@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->name }}</h5>
-                    <p class="card-text">Category: {{ $item->description }}</p>
+                    <p class="card-text">Category: {{ $item->item_type->name }}</p>
                     <p class="card-text">Price: ${{ $item->weight }}</p>
                 </div>
                 <div class="card-footer">

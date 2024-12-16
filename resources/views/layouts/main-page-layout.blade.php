@@ -8,6 +8,37 @@
     @yield('styles')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Pastikan footer tetap di bawah */
+        html, body {
+            height: 100%; /* Tinggi penuh untuk Flexbox */
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; /* Susun elemen secara vertikal */
+        }
+
+        .container {
+            flex: 1; /* Buat konten utama mengambil sisa ruang */
+        }
+
+        footer {
+            background-color: #4A7562;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Pastikan tetap di bawah */
+            width: 100%;
+            color: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +87,7 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="text-white text-center py-4 mt-5" style="background-color: #4A7562">
+    <footer class="text-white text-center py-4">
         <p>&copy; Re-Value. All rights reserved.</p>
     </footer>
 

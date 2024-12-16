@@ -1,5 +1,5 @@
 <!-- Button to trigger the "Create Product" modal -->
-<button type="button" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 
+<button type="button" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
 onmouseout="this.style.backgroundColor='#4A7562';" data-bs-toggle="modal" data-bs-target="#createProductModal">
     Create Product
 </button>
@@ -66,7 +66,7 @@ onmouseout="this.style.backgroundColor='#4A7562';" data-bs-toggle="modal" data-b
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn"style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 
+                        <button type="submit" class="btn"style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
                         onmouseout="this.style.backgroundColor='#4A7562';">Create Product</button>
                     </form>
                 </div>

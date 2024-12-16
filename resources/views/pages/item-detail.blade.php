@@ -11,7 +11,7 @@
 @section('content')
 <div class="container my-5">
     <div class="card border-0 shadow">
-        <div class="row g-0 align-items-center"> <!-- Pusatkan elemen dalam row -->
+        <div class="row g-0 align-items-center">
             <div class="col-md-5 image-container">
                 <img src="{{ asset($item->image_path) }}" class="item-image" alt="{{ $item->name }}">
             </div>

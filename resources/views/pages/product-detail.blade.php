@@ -35,6 +35,7 @@
                             class="btn w-25"style="background-color: #4A7562; color:white"
                             onmouseover="this.style.backgroundColor='#3f5d48';"
                             onmouseout="this.style.backgroundColor='#4A7562';">Buy</a>
+                            
                         <a href="{{ url()->previous() }}"
                             class="btn btn-outline mx-2 w-25"style="border: 1.85px solid #4A7562; color: #4A7562; background-color: transparent;"
                             onmouseover="this.style.backgroundColor='#4A7562'; this.style.color='white';"

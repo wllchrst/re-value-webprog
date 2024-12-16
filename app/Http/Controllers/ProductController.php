@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Transaction;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 
 class ProductController
@@ -25,10 +27,35 @@ class ProductController
     }
 
     public function getPage(){
-        $products = Product::orderBy("created_at", "desc")->paginate(20);
+        $products = Product::orderBy("created_at", "desc")->where('sold', false)->paginate(20);
         return view("pages.product", compact("products"));
     }
 
+    public function getDetail($id){
+        $product = Product::findOrFail($id);
+        return view("pages.product-detail", compact("product"));
+    }
+
+    public function buy($id) {
+        $product = Product::findOrFail($id);
+
+        if($product->sold == true) {
+            return;
+        }
+
+        DB::transaction(function () use ($product) {
+            $user = auth()->user();
+            Transaction::create([
+                "user_id" => $user->id,
+                "product_id" => $product->id
+            ]);
+
+            $product->sold = true;
+            $product->save();
+        });
+
+        return redirect()->route("product.getPage");
+    }
     /**
      * Store a newly created resource in storage.
      */

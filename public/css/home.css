@@ -119,3 +119,14 @@ footer p {
     align-items: center;
 }
 
+.btn-green {
+    background-color: #2C6B49;
+    border-color: #2C6B49;
+}
+
+.btn-green:hover {
+    background-color: #1f4a35; /* Mengubah warna tombol saat hover */
+    border-color: #1f4a35;
+}
+
+

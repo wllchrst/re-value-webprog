@@ -1,26 +1,26 @@
 .image-container {
     display: flex;
-    align-items: center; /* Pusatkan gambar secara vertikal */
-    justify-content: center; /* Pusatkan gambar horizontal */
-    overflow: hidden; /* Hilangkan overflow jika ada */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .item-image {
     width: 100%;
-    height: auto; /* Ikuti proporsi gambar */
-    max-height: 426px; /* Batasi tinggi gambar */
+    height: auto;
+    max-height: 426px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .card {
-    height: auto; /* Card menyesuaikan konten */
+    height: auto;
     display: flex;
     flex-wrap: wrap;
 }
 
 .card-body {
-    padding: 20px; /* Tambahkan padding untuk konten */
+    padding: 20px;
 }
 
 .btn {
@@ -28,5 +28,5 @@
 }
 
 .row.g-0 {
-    margin: 0; /* Hilangkan margin default */
+    margin: 0;
 }

@@ -24,9 +24,13 @@ Route::prefix("user")->group(function () {
 Route::prefix("product")->group(function () {
     Route::get("", [ProductController::class, "getPage"])->name("product.getPage");
     Route::post('/store', [ProductController::class, "store"])->name("product.store");
+    Route::get("/{id}", [ProductController::class, 'getDetail'])->name("product.detail");
+    Route::get("/buy/{id}", [ProductController::class, 'buy'])->name("product.buy");
 });
 
 Route::prefix("item")->group(function () {
     Route::get("", [ItemController::class, "getPage"])->name("item.getPage");
     Route::post('/store', [ItemController::class, "store"])->name("item.store");
+    Route::get("/{id}", [ItemController::class, 'getDetail'])->name("item.detail");
+    Route::get("/buy/{id}", [ItemController::class, 'buy'])->name("item.buy");
 });

@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->name }}</h5>
                     <p class="card-text">Category: {{ $item->item_type->name }}</p>
-                    <p class="card-text">Price: ${{ $item->weight }}</p>
+                    <p class="card-text">Weight: {{ $item->weight }} gram</p>
                 </div>
                 <div class="card-footer">
                     <a href="{{ route('item.detail', $item->id) }}" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';" 

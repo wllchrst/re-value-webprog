@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $item->name }}</h5>
                         <p class="card-text"><strong>Description:</strong> {{ $item->description }}</p>
-                        <p class="card-text"><strong>Weight:</strong> {{ $item->weight }} kg</p>
+                        <p class="card-text"><strong>Weight:</strong> {{ $item->weight }} gram</p>
                         <p class="card-text"><strong>Sold:</strong> {{ $item->sold ? 'Yes' : 'No' }}</p>
                         <p class="card-text"><strong>Item Type ID:</strong> {{ $item->item_type->name }}</p>
                         <p class="card-text"><strong>Created At:</strong> {{ $item->created_at->format('Y-m-d H:i:s') }}</p>

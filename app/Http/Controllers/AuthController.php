@@ -39,7 +39,8 @@ class AuthController extends Controller
         // Handle file upload
         if ($request->hasFile('image_path')) {
             $imageName = time() . '.' . $request->image_path->extension();
-            $request->image_path->move(public_path('images'), $imageName);
+            $path = '/tmp';
+            $request->image_path->move($path, $imageName);
         }
 
         $imagePathPrefix = "images/";

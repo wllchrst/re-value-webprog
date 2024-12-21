@@ -13,9 +13,10 @@
         <!-- Profile Card -->
         <div class="card shadow-lg mx-auto" style="max-width: 800px; overflow: hidden; border-radius: 15px;">
             <!-- Cover Photo -->
-            <div class="position-relative" style="height: 150px; background: linear-gradient(to right,#4A7562,rgb(178, 219, 203));">
+            <div class="position-relative"
+                style="height: 150px; background: linear-gradient(to right,#4A7562,rgb(178, 219, 203));">
                 @if ($user->image_path)
-                    <img src="{{ asset($user->image_path) }}" alt="Profile Image"
+                    <img src="{{ $user->image_path }}" alt="Profile Image"
                         class="rounded-circle border border-white shadow position-absolute top-100 start-50 translate-middle"
                         style="width: 120px; height: 120px;">
                 @else
@@ -32,8 +33,9 @@
                 <p class="text-muted">
                     <strong>Points: </strong><span style="color: #4A7562; font-weight: bold;">{{ $user->point }}</span>
                 </p>
-                <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
-                onmouseout="this.style.backgroundColor='#4A7562';">Edit Profile</a>
+                <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm" class="btn w-100"
+                    style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
+                    onmouseout="this.style.backgroundColor='#4A7562';">Edit Profile</a>
             </div>
 
             <!-- About Section -->

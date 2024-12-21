@@ -18,7 +18,8 @@ class ItemController extends Controller
         //
     }
 
-    public function getPage(){
+    public function getPage()
+    {
         $items = Item::orderBy("created_at", "desc")->where("sold", false)->paginate();
         return view("pages.item", compact("items"));
     }
@@ -31,7 +32,8 @@ class ItemController extends Controller
         //
     }
 
-    private function getItemPoint(Item $item): int {
+    private function getItemPoint(Item $item): int
+    {
         // $itemTypes = [
         //     ['name' => 'Plastic', 'description' => 'Items with plastic material'],
         //     ['name' => 'Metal', 'description' => 'Items with metal material'],
@@ -44,29 +46,31 @@ class ItemController extends Controller
 
         $item_type = $item->item_type->name;
 
-        if($item_type == 'Plastic') $multiplier = 1;
-        else if($item_type == 'Metal') $multiplier = 3;
-        else if($item_type == 'Glass') $multiplier = 2;
-        else if($item_type == 'Paper') $multiplier = 1;
-        else if($item_type == 'Fabric') $multiplier = 2;
+        if ($item_type == 'Plastic') $multiplier = 1;
+        else if ($item_type == 'Metal') $multiplier = 3;
+        else if ($item_type == 'Glass') $multiplier = 2;
+        else if ($item_type == 'Paper') $multiplier = 1;
+        else if ($item_type == 'Fabric') $multiplier = 2;
 
         return $multiplier * $item->weight;
     }
 
-    public function getDetail($id){
+    public function getDetail($id)
+    {
         $item = Item::findOrFail($id);
 
         return view('pages.item-detail', compact("item"));
     }
 
-    public function buy($id){
+    public function buy($id)
+    {
         $item = Item::findOrFail($id);
 
-        if($item->sold) {
+        if ($item->sold) {
             return redirect()->route("item.getPage");
         }
 
-        DB::transaction(function() use($item) {
+        DB::transaction(function () use ($item) {
             $user = auth()->user();
 
             $point = $this->getItemPoint($item);
@@ -99,17 +103,7 @@ class ItemController extends Controller
 
         $user = Auth::user();
 
-        $imagePath = null;
-        if ($request->hasFile('image')) {
-            // Get the file from the request
-            $imageFile = $request->file('image');
-            // Generate a unique image name
-            $imageName = time() . '.' . $imageFile->extension();
-            // Move the image to the public 'images' directory
-            $imageFile->move(public_path('images'), $imageName);
-            // Set the image path prefix
-            $imagePath = "images/" . $imageName;
-        }
+        $imagePath = ImageController::uploadImage($request, 'image');
 
         $item = Item::create([
             'name' => $validatedData['name'],

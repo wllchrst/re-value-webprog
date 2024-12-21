@@ -71,19 +71,8 @@ class ProductController
 
         $user = Auth::user();
 
-        $imagePath = null;
-        if ($request->hasFile('image')) {
-            // Get the file from the request
-            $imageFile = $request->file('image');
-            // Generate a unique image name
-            $imageName = time() . '.' . $imageFile->extension();
-            // Move the image to the public 'images' directory
-            $imageFile->move(public_path('images'), $imageName);
-            // Set the image path prefix
-            $imagePath = "images/" . $imageName;
-        }
+        $imagePath = ImageController::uploadImage($request, 'image');
 
-        // Create the product record
         $product = Product::create([
             'name' => $validatedData['name'],
             'category' => $validatedData['category'],

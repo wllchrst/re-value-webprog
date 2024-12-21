@@ -13,7 +13,7 @@ class AuthController extends Controller
     /**
      * Show the login form.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\View\View;
      */
     public function showLoginForm()
     {
@@ -36,14 +36,7 @@ class AuthController extends Controller
             'image_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Handle file upload
-        if ($request->hasFile('image_path')) {
-            $imageName = time() . '.' . $request->image_path->extension();
-            $path = '/tmp';
-            $request->image_path->move($path, $imageName);
-        }
-
-        $imagePathPrefix = "images/";
+        $imagePath = ImageController::uploadImage($request);
 
         // Create a new user
         $user = User::create([
@@ -51,7 +44,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'password' => bcrypt($request->password),
             'description' => $request->description,
-            'image_path' => $imagePathPrefix . $imageName, // Save the image path in the database
+            'image_path' => $imagePath
         ]);
 
         Auth::login($user);

@@ -34,25 +34,6 @@ footer p {
     margin-bottom: 2rem;
 }
 
-
-.welcomecontainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5rem 0 5rem 0;
-}
-
-.welcomecontainer h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #2C6B49;
-}
-
-.welcomecontainer img{
-    width: 100%;
-}
-
 @keyframes fadeInLeft {
     from {
         opacity: 0;

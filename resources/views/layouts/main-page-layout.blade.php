@@ -64,12 +64,12 @@
                         <a class="nav-link {{ Route::currentRouteName() == 'item.getPage' ? 'active' : '' }}"
                             href="{{ route('item.getPage') }}">Item</a>
                     </li>
-                    <li class="nav-item mx-3">
+                    {{-- <li class="nav-item mx-3">
                         <a class="nav-link" href="#">Settings</a>
                     </li>
                     <li class="nav-item mx-3">
                         <a class="nav-link" href="#">Messages</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div>

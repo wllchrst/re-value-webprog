@@ -6,6 +6,25 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <style>
+        .welcomecontainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5rem 0 5rem 0;
+        }
+
+        .welcomecontainer h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #2C6B49;
+        }
+
+        .welcomecontainer img {
+            width: 100%;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -29,12 +48,16 @@
                     </p>
                     <div class="d-flex">
                         <div>
-                            <a href="{{ route('product.getPage') }}" class="btn w-40" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
-                            onmouseout="this.style.backgroundColor='#4A7562';"> See Product </a>
+                            <a href="{{ route('product.getPage') }}" class="btn w-40"
+                                style="background-color: #4A7562; color:white"
+                                onmouseover="this.style.backgroundColor='#3f5d48';"
+                                onmouseout="this.style.backgroundColor='#4A7562';"> See Product </a>
                         </div>
                         <div class="mx-3">
-                            <a href="{{ route('item.getPage') }}" class="btn w-40" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
-                            onmouseout="this.style.backgroundColor='#4A7562';"> See Item </a>
+                            <a href="{{ route('item.getPage') }}" class="btn w-40"
+                                style="background-color: #4A7562; color:white"
+                                onmouseover="this.style.backgroundColor='#3f5d48';"
+                                onmouseout="this.style.backgroundColor='#4A7562';"> See Item </a>
                         </div>
                     </div>
                 </div>
@@ -46,50 +69,57 @@
     </div>
     <div class="container-mainpoint mt-5">
         <div>
-            <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s" style="color: #2C6B49">Re-Value can do it all</h2>
+            <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s"
+                style="color: #2C6B49">Re-Value can do it all</h2>
         </div>
         <div class="row text-center">
             <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft animate__delay-1s animate__duration-2s">
-                <img src="/website-content/Recycle_icon.png" alt="Recycled Products" class="img-fluid mb-3" style="width: 100px;">
+                <img src="/website-content/Recycle_icon.png" alt="Recycled Products" class="img-fluid mb-3"
+                    style="width: 100px;">
                 <h5>Recycled Products</h5>
                 <p>Buy eco-friendly items made from recycled materials</p>
             </div>
             <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s animate__duration-2s">
-                <img src="/website-content/SaleTag_icon.png" alt="Sell Used Items" class="img-fluid mb-3" style="width: 100px;">
+                <img src="/website-content/SaleTag_icon.png" alt="Sell Used Items" class="img-fluid mb-3"
+                    style="width: 100px;">
                 <h5>Sell Used Items</h5>
                 <p>Sell used bottles, cardboard, cans, and earn points</p>
             </div>
             <div class="col-md-4 mb-4 animate__animated animate__fadeInRight animate__delay-1s animate__duration-2s">
-                <img src="/website-content/Coin_icon.png" alt="Earn Points for Recycling" class="img-fluid mb-3" style="width: 100px;">
+                <img src="/website-content/Coin_icon.png" alt="Earn Points for Recycling" class="img-fluid mb-3"
+                    style="width: 100px;">
                 <h5>Earn Points for Recycling</h5>
                 <p>Get points for submitting used items. Redeem for rewards!</p>
             </div>
         </div>
     </div>
     <div class="container mt-4 animate__animated animate__fadeInUp animate__delay-1s animate__duration-2s">
-        <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s" style="color: #2C6B49">Our Products</h2>
-            <div class="row row-cols-1 row-cols-md-4 g-4 products-container">
-                @foreach ($products as $product)
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="{{ $product->image_path ?? 'default-image.jpg' }}" class="card-img-top max-h-10"
-                                alt="{{ $product->name }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $product->name }}</h5>
-                                <p class="card-text">Category: {{ $product->category }}</p>
-                                <p class="card-text">Price: ${{ $product->price }}</p>
-                                <p class="card-text">Stock: {{ $product->stock }}</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="{{ route("product.detail", $product->id) }}" class="btn w-100" style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
+        <h2 class="text-center mb-4 animate__animated animate__fadeInDown animate__delay-1s animate__duration-2s"
+            style="color: #2C6B49">Our Products</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4 products-container">
+            @foreach ($products as $product)
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{ $product->image_path ?? 'default-image.jpg' }}" class="card-img-top max-h-10"
+                            alt="{{ $product->name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text">Category: {{ $product->category }}</p>
+                            <p class="card-text">Price: ${{ $product->price }}</p>
+                            <p class="card-text">Stock: {{ $product->stock }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ route('product.detail', $product->id) }}" class="btn w-100"
+                                style="background-color: #4A7562; color:white"
+                                onmouseover="this.style.backgroundColor='#3f5d48';"
                                 onmouseout="this.style.backgroundColor='#4A7562';"> Buy Now </a>
-                            </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-            <div class="pagination justify-content-center">
-                {{ $products->links() }}
-            </div>
+                </div>
+            @endforeach
         </div>
+        <div class="pagination justify-content-center">
+            {{ $products->links() }}
+        </div>
+    </div>
 @endsection

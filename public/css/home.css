@@ -35,7 +35,7 @@ footer p {
 }
 
 
-.welcome-container {
+.welcomecontainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,13 +43,13 @@ footer p {
     margin: 5rem 0 5rem 0;
 }
 
-.welcome-container h1 {
+.welcomecontainer h1 {
     font-size: 50px;
     margin-bottom: 20px;
     color: #2C6B49;
 }
 
-.welcome-container img{
+.welcomecontainer img{
     width: 100%;
 }
 

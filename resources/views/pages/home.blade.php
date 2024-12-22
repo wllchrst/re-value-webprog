@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <div class="welcome-container">
+    <div class="welcomecontainer">
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="showcase-left animate__animated animate__fadeInLeft">

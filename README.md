@@ -88,7 +88,7 @@ Pada page Item akan ditampilkan item-item barang bekas yang dijual oleh user kep
 Item Detail Page dapat dilihat dengan cara mengklik button Buy Now pada item yang ingin dilihat. Page ini akan menampilkan detail dari item seperti yang tertera pada gambar, dan ada button Buy untuk membeli dan Back untuk kembali ke page sebelumnya.
 
 #### Profile Page
-Di Profile Page, terdapat foto profil, nama, email, about me, button untuk user menambahkan product, dan button untuk user menambahkan item. User juga dapat melihat poin yang didapatkan dari membeli item ataupun product di website Re-value.
+Di Profile Page, terdapat foto profil, nama, email, about me, button untuk user menambahkan product, dan button untuk user menambahkan item. User juga dapat melihat poin yang didapatkan dari membeli item ataupun product di website Re-value. Selain itu, terdapat tombol Log Out yang dapat digunakan user untuk keluar dari akun dan mengakhiri sesi secara aman.
 
 #### Create Product Form
 Create Product Form ini akan muncul ketika user mengklik button Create Product pada Profile Page. Form ini berfungsi untuk menginput informasi-informasi mengenai recycle product yang ingin dijual.  

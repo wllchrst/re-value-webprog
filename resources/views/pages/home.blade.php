@@ -24,6 +24,25 @@
         .welcomecontainer img {
             width: 100%;
         }
+
+        .jargon {
+            background-color: #effaf5;
+            padding: 35px 0 35px 0;
+            text-align: center;
+            font-size: 20px;
+            animation: fadeInUp 1s ease-out;
+            animation-delay: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .container-mainpoint{
+            background-color: #fffbf0;
+            padding: 60px;
+            border-radius: 8px;
+        }
     </style>
 @endsection
 

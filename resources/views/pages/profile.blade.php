@@ -33,9 +33,26 @@
                 <p class="text-muted">
                     <strong>Points: </strong><span style="color: #4A7562; font-weight: bold;">{{ $user->point }}</span>
                 </p>
-                <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm" class="btn w-100"
-                    style="background-color: #4A7562; color:white" onmouseover="this.style.backgroundColor='#3f5d48';"
-                    onmouseout="this.style.backgroundColor='#4A7562';">Edit Profile</a>
+                <div class="d-flex justify-content-center gap-3 align-items-center">
+                    <!-- Edit Profile Button -->
+                    <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm"
+                        style="background-color: #4A7562; color: white; font-weight: bold; padding: 8px 16px; border-radius: 5px; display: flex; align-items: center; justify-content: center; text-align: center;"
+                        onmouseover="this.style.backgroundColor='#3f5d48';"
+                        onmouseout="this.style.backgroundColor='#4A7562';">
+                        Edit Profile
+                    </a>
+
+                    <!-- Logout Button -->
+                    <form action="{{ route('user.logout') }}" method="POST" style="margin: 0;">
+                        @csrf
+                        <button type="submit" class="btn btn-sm"
+                            style="background-color: #D9534F; color: white; font-weight: bold; padding: 8px 16px; border-radius: 5px; display: flex; align-items: center; justify-content: center; text-align: center;"
+                            onmouseover="this.style.backgroundColor='#C9302C';"
+                            onmouseout="this.style.backgroundColor='#D9534F';">
+                            Log Out
+                        </button>
+                    </form>
+                </div>
             </div>
 
             <!-- About Section -->

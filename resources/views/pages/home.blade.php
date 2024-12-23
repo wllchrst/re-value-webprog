@@ -7,6 +7,7 @@
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <style>
+    
         .welcomecontainer {
             display: flex;
             flex-direction: column;
@@ -24,6 +25,50 @@
         .welcomecontainer img {
             width: 100%;
         }
+        
+        .jargon {
+    background-color: #effaf5;
+    padding: 35px 0 35px 0;
+    text-align: center;
+    font-size: 20px;
+    animation: fadeInUp 1s ease-out;
+    animation-delay: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #4A7562;
+    border-color: #4A7562;
+    color: white;
+}
+
+/* Gaya untuk pagination hover */
+.pagination .page-item:hover .page-link {
+    background-color: #3f5d48;
+    color: #ccc;
+    border-color: #3f5d48;
+}
+
+.pagination .page-link {
+    color: #4A7562;
+    border: 1px solid #4A7562;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #f1f1f1;
+    color: #ccc;
+    border-color: #ccc;
+}
+
+.container-mainpoint{
+    background-color: #fffbf0;
+    padding: 60px;
+    border-radius: 8px;
+}
+        
     </style>
 @endsection
 

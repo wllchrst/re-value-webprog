@@ -6,6 +6,41 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/itemDetail.css') }}">
+    <style>
+    .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .item-image {
+        width: 100%;
+        height: auto;
+        max-height: 426px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .card {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    .row.g-0 {
+        margin: 0;
+    }
+</style>
+
 @endsection
 
 @section('content')

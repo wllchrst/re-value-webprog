@@ -6,6 +6,28 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/productDetail.css') }}">
+    <style>
+        .product-image {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .btn-checkout {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-back {
+            margin-top: 10px;
+        }
+    </style>
 @endsection
 
 @section('content')

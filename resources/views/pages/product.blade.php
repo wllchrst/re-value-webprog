@@ -6,6 +6,31 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <style>
+        .pagination .page-item.active .page-link {
+    background-color: #4A7562;
+    border-color: #4A7562;
+    color: white;
+}
+
+/* Gaya untuk pagination hover */
+.pagination .page-item:hover .page-link {
+    background-color: #3f5d48;
+    color: #ccc;
+    border-color: #3f5d48;
+}
+
+.pagination .page-link {
+    color: #4A7562;
+    border: 1px solid #4A7562;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #f1f1f1;
+    color: #ccc;
+    border-color: #ccc;
+}
+    </style>
 @endsection
 
 @section('content')
